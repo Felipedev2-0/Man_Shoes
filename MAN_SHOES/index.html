@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&display=swap" rel="stylesheet">
+    <title>MAN SHOES</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div>
+                <h1 class="logo"> MAN'S SHOES</h1>
+            </div>
+            <ul class="nav_list">
+                <li class="nav_link">
+                    <a href="#">Sobre a Loja</a>
+                </li>
+                <span>|</span>
+                <li class="nav_link">
+                    <a href="#">Produtos</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <section id="sobreALoja">
+        <img src="./imagem/loja.jpg" alt="loja">
+        <div class="texto">
+            <h2>SOBRE A LOJA</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore repellendus maiores nam ratione nemo ad
+                nobis
+                eveniet recusandae qui optio, aspernatur officiis itaque cum, culpa sapiente praesentium consequuntur
+                porro
+                officia.</p>
+        </div>
+    </section>
+    <section class="produtos">
+        <h2>PRODUTOS</h2>
+        <div class="carousel-container">
+            <button class="carousel-btn prev-btn">&#10094;</button>
+            <div class="produtos-carousel">
+                <div class="nike">
+                    <img src="./imagem/nike_tenis.jpg" alt="nike">
+                    <div class="info">
+                        <h3>Tenis Nike</h3>
+                        <p class="descricao">Tenis Nike Basquete - Tamanhos 38, 39, 40, 41 e 42</p>
+                        <button class="btn">
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="adidas">
+                    <img src="./imagem/adidas_tenis.jpg" alt="adidas">
+                    <div class="info">
+                        <h3>Tenis Adidas</h3>
+                        <p class="descricao">Tenis Adidas Vintage - Tamanhos 38, 39, 40, 41 e 42</p>
+                        <button class="btn">
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="new">
+                    <img src="./imagem/new_tenis.jpg" alt="new">
+                    <div class="info">
+                        <h3>Tenis New</h3>
+                        <p class="descricao">Tenis New - Tamanhos 38, 39, 40, 41 e 42</p>
+                        <button class="btn">
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="converse">
+                    <img src="./imagem/converse-2387917_1280.jpg" alt="converse">
+                    <div class="info">
+                        <h3>Tenis Converse</h3>
+                        <p class="descricao">Tenis Converse - Tamanhos 38, 39, 40, 41 e 42</p>
+                        <button class="btn">
+                            <span>Adicionar ao carrinho</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next-btn">&#10095;</button>
+        </div>
+    </section>
+    <footer class="rodape">
+        Todos os direitos reservados MAN'S SHOES
+    </footer>
+    <script>
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+        const carousel = document.querySelector('.produtos-carousel');
+
+        let scrollAmount = 0;
+
+        nextBtn.addEventListener('click', () => {
+            scrollAmount += carousel.clientWidth;
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            scrollAmount -= carousel.clientWidth;
+            carousel.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+
+</body>
+
+</html>
